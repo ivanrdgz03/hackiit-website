@@ -15,6 +15,8 @@ import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
+import node from '@astrojs/node';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -87,4 +89,8 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: node({
+    mode: 'standalone',
+  }),
 });
